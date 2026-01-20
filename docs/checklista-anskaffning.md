@@ -45,6 +45,7 @@
 - [ ] Det finns stöd för loggning, övervakning och drift i organisationens it-miljö.
 - [ ] Lösningen passar in i organisationens arkitektur (integrationer, beroenden, nätverk).
 
+
 ## E. Dokumentation av beslut
 
 - [ ] Bedömning och val/avstående är dokumenterat.
@@ -68,6 +69,13 @@
   - Del 4: Undvik inlåsning vid it-upphandling
 
 ---
+Vägledning för avrop från Programvaror och tjänster | Kammarkollegiet  innehåller följande:
+För att underlätta för avropande organisation att avropa programvara med öppen källkod framgår det bl.a. i bilaga ”Kravkatalog” till ramavtalet att;
+•	Kund får ställa ett obligatoriskt krav på specifik namngiven Programvara som i sin helhet
+•	är licensierad med en eller flera licenser godkända av Open Source Initiative (OSI),
+•	är gratis och fri för alla leverantörer att nyttja (det krävs ex. ingen återförsäljarstatus).
+Kund får ställa obligatoriska krav på standarder om standarden uppfyller kraven på en öppen standard enligt SOU 2009:86.
+
 
 ## Se även – alla checklistor
 
@@ -81,3 +89,5 @@
 - [Checklista – publicering av version 1.0.0](checklista-publicering-1.0.md)
 - [Checklista – säkerhet i öppna programvaruprojekt](checklista-sakerhet.md)
 - [Översikt – standarder och specifikationer](checklista-standarder.md)
+
+
