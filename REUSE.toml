@@ -1,0 +1,6 @@
+version = 1
+
+[[annotations]]
+path = ["**"]
+SPDX-FileCopyrightText = "2025 Myndigheten för digital förvaltning (DIGG)"
+SPDX-License-Identifier = "CC0-1.0"

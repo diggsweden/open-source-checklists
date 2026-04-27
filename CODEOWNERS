@@ -1,0 +1,13 @@
+# CODEOWNERS för open-source-checklists
+#
+# Format: <pattern>  <ägare>
+# Se: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Standardägare för allt i repot
+*       @diggsweden/ospo
+
+# Specifika ägare per ämnesområde
+/docs/checklista-licenser.md            @diggsweden/ospo @diggsweden/legal
+/docs/checklista-sakerhet.md            @diggsweden/ospo @diggsweden/security
+/docs/checklista-diarie-arkiv.md        @diggsweden/ospo @diggsweden/registratur
+/docs/checklista-anskaffning.md         @diggsweden/ospo @diggsweden/upphandling

@@ -1,56 +1,73 @@
+# Checklista – arbete på kodsamverkansplattform
 
-# Checklista – arbete på kodsamverkansplattform (Git-leverantör)
+**Syfte:** Praktiskt stöd för hur organisationen använder kodsamverkansplattformar (GitHub, GitLab, Codeberg/Forgejo) — antingen självdriftade eller som SaaS. *Definition från DIGG-riktlinje §Definitioner.*
 
-**Syfte:** Praktiskt stöd för hur organisationen använder Git-plattformar (t.ex. GitHub).
+**Stilkonvention:** Punkter är krav (**SKA**) om inget annat anges. Punkter markerade **BÖR** är rekommendationer.
+
+Den här checklistan är **kanonisk hemvist** för branch protection, behörigheter, 2FA, code review och repository-grundkrav. Andra checklistor länkar hit.
 
 ## A. Skapande av repositorier
 
-- [ ] Repositoriet är skapat under rätt organisation/"org".
-- [ ] Namnet följer överenskommen namngivningsprincip.
-- [ ] Synlighet (public/private) är satt enligt informationsklassning och beslut.
-- [ ] Standardfiler (LICENSE, README, .gitignore, ev. CODEOWNERS) är på plats, gärna från mall.
-- [ ] CODEOWNERS-fil används för detaljerad beskrivning av underhåll som komplement till README:s Maintainer-sektion (Should use a CODEOWNERS file for granular maintenance descriptions).
+- [ ] **SKA** — Repositoriet är skapat under rätt organisation/"org".
+- [ ] **SKA** — Namnet följer överenskommen namngivningsprincip.
+- [ ] **SKA** — Synlighet (public/private) är satt enligt informationsklassning och beslut.
+- [ ] **SKA** — Standardfiler (LICENSE, README, .gitignore) är på plats, gärna från [open-source-project-template](https://github.com/diggsweden/open-source-project-template). `.gitignore` täcker språkets/byggsystemets default-output så att genererade artefakter inte versionshanteras. *Källa: OSPS-QA-05.01 (L2).*
+- [ ] **BÖR** — CODEOWNERS-fil används för granulär maintenance-beskrivning som komplement till README:s Maintainer-sektion (se [forvaltning §A](checklista-publicering-forvaltning.md#a-beslut-ansvar-och-förvaltare)).
 
 ## B. Behörigheter och åtkomst
 
-- [ ] Tvåfaktorsautentisering (2FA) eller multifaktorautentisering (MFA) används för att försvåra kontoövertaganden (Must use two-factor authentication (2FA) or multifactor authentication (MFA)).
-- [ ] Behörigheter är satta enligt principen om minsta möjliga åtkomst.
-- [ ] Merge- och push-rättigheter till specifika brancher är begränsade (Must limit merge and push rights to specific branches).
-- [ ] Rollerna (admin, maintainer, write, read) används konsekvent.
-- [ ] Externa samarbetspartners har endast nödvändig åtkomst.
-- [ ] En regelbunden översyn av behörigheter är planerad/genomförs (Should have a basic knowledge of committers and maintainers, and must do a periodic review of those).
+- [ ] **SKA** — Tvåfaktorsautentisering (2FA/MFA) krävs för alla collaborators som kan ändra repository-inställningar.
+- [ ] **SKA** — Behörigheter följer principen om minsta möjliga åtkomst (least privilege).
+- [ ] **SKA** — Merge- och push-rättigheter till release-brancher är begränsade.
+- [ ] **SKA** — Rollerna (admin, maintainer, write, read) används konsekvent.
+- [ ] **SKA** — Externa samarbetspartners har endast nödvändig åtkomst, tidsbegränsad där det är tillämpligt.
+- [ ] **SKA** — Periodisk översyn av behörigheter genomförs (rekommenderat: minst halvårsvis).
 
-## C. Branch-strategi och ändringsflöde
+## C. Branch-strategi, code review och ändringsflöde
 
-- [ ] Ändringar i kod görs huvudsakligen via pull/merge requests.
-- [ ] Minst en person utöver den som gjort ändringen granskar innan merge.
-- [ ] Skyddade brancher (t.ex. main/master) används där det är möjligt.
-- [ ] Automatiska tester kopplas till pull requests där det är rimligt.
-- [ ] GitHub-workflow eller liknande är diskuterat och dokumenterat där relevant (May discuss your GitHub workflow).
+- [ ] **SKA** — Branch protection är aktiverad på release-branch(er) (`main`/`master`/`release/*`).
+- [ ] **SKA** — Direkt push till release-branch är förhindrad; ändringar går via ändringsförfrågningar (PR/MR).
+- [ ] **SKA** — Code review krävs: minst en granskare utöver författaren innan merge.
+- [ ] **SKA** — Automatiserade statuskontroller (tester, linters, säkerhetsskanning) måste passera innan merge — eller ha dokumenterat manuellt godkännande.
+- [ ] **SKA** — CI är kopplad till ändringsförfrågningar.
+- [ ] **BÖR** — Trunk-based eller GitHub-flow är valt och dokumenterat i `CONTRIBUTING.md`.
+- [ ] **BÖR** — För GitHub: var medveten om risken med `pull_request_target` i workflows och granska Actions-rättigheter (`permissions:`).
 
-## D. Loggning och spårbarhet
+## D. Signering och spårbarhet
 
-- [ ] Utveckling sker på ett sätt som möjliggör spårbarhet (vem gjorde vad, när).
-- [ ] Direkt push till produktionsbranch utan PR undviks.
-- [ ] Eventuella undantag från processen dokumenteras och motiveras.
+- [ ] **SKA** — Release-taggar och release-artefakter signeras (Sigstore/cosign rekommenderas; GPG accepteras). *Källa: OSPS-BR-06.01.*
+- [ ] **SKA** — Utveckling sker så att spårbarhet bevaras (vem gjorde vad, när).
+- [ ] **SKA** — Eventuella undantag från processen dokumenteras och motiveras.
+- [ ] **BÖR** — Signerade commits används där risknivån motiverar det.
 
 ## E. Plattformsbyten
 
-- [ ] Vid byte av Git-leverantör finns plan för migrering av repos.
-- [ ] Länkar i andra system (intranät, webb, dataportal) uppdateras.
-- [ ] OSPO/it och relevanta funktioner är involverade i planeringen.
+- [ ] **SKA** — Vid byte av Git-leverantör finns plan för migrering av repos (ärenden, ändringsförfrågningshistorik, taggar).
+- [ ] **SKA** — Länkar i andra system (intranät, webb, dataportal) uppdateras.
+- [ ] **SKA** — OSPO/IT och relevanta funktioner är involverade i planeringen.
 
 ## F. Arkivering av projekt
 
-- [ ] Plattformens "Archival"-funktion används vid arkivering (Should use the platform's "Archival" function - becomes read-only).
-- [ ] I README anges att projektet inte längre underhålls (Should state in the README that the project is no longer maintained).
-- [ ] Projektet arkiveras om det inte finns förvaltare (Should be archived if there are no maintainers).
+- [ ] **SKA** — Plattformens arkiveringsfunktion används (read-only).
+- [ ] **SKA** — README anger att projektet inte längre underhålls.
+- [ ] **SKA** — Projekt utan förvaltare arkiveras.
+
+---
+
+## Källor
+
+- **DIGG: Riktlinje för öppen programvara** (Dnr 2026-02797, beslutad 2026-04-07) — *Definitioner (kodsamverkansplattformar)*, *Utveckla*, *Livscykelhantera*
+- [OpenSSF OSPS Baseline – Access Control](https://baseline.openssf.org/) — AC-01 till AC-05, BR-06.01
+- [OpenSSF Concise Guide for Developing More Secure Software](https://best.openssf.org/Concise-Guide-for-Developing-More-Secure-Software) — MFA, code review, signering
+- [Standard for Public Code](https://standard.publiccode.net/) — *Maintain version control*, *Require review of contributions*
+- [GitHub: Securing your repository](https://docs.github.com/en/code-security)
 
 ---
 
 ## Se även – alla checklistor
 
 - [Checklista – anskaffning och val av öppen programvara](checklista-anskaffning.md)
+- [Checklista – använda öppen programvara](checklista-anvandning.md)
 - [Checklista – hantering av ärenden, frågor och externa bidrag](checklista-arenden-community.md)
 - [Checklista – bidrag till tredjeparts-OSS](checklista-bidrag-uppstrom.md)
 - [Checklista – diarieföring och arkivering](checklista-diarie-arkiv.md)

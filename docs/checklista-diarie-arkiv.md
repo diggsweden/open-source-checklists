@@ -1,41 +1,55 @@
-
-
-  
 # Checklista – diarieföring och arkivering av öppna programvaruprojekt
 
 **Syfte:** Säker hantering av projekt som allmänna handlingar.
 
+**Stilkonvention:** Punkter är krav (**SKA**) om inget annat anges. Punkter markerade **BÖR** är rekommendationer.
+
 ## A. När ska projekt diarieföras?
 
-- [ ] Beslut om att starta projektet är diariefört.
-- [ ] Beslut om att första gången publicera projektet externt är diariefört.
-- [ ] Beslut om att projektet avslutas/arkiveras är diariefört.
-- [ ] Koppling mellan ärende och repositorium (URL/ID) är dokumenterad.
+- [ ] **SKA** — Beslut om att starta projektet är diariefört.
+- [ ] **SKA** — Beslut om att första gången publicera projektet externt är diariefört.
+- [ ] **SKA** — Beslut om att projektet avslutas/arkiveras är diariefört.
+- [ ] **SKA** — Koppling mellan ärende och repositorium (URL/ID) är dokumenterad.
 
 ## B. Vilka handlingar diarieförs?
 
-- [ ] Beslutsunderlag (start-PM, licensval, risk- och säkerhetsbedömningar) är diarieförda.
-- [ ] Beslut om publicering av källkod är diariefört.
-- [ ] Eventuella avtal/överenskommelser om gemensam utveckling är diarieförda.
-- [ ] Dokumentation om arkivering eller nedstängning är diarieförd.
+- [ ] **SKA** — Beslutsunderlag (start-PM, licensval, risk- och säkerhetsbedömningar) är diarieförda.
+- [ ] **SKA** — Beslut om publicering av källkod är diariefört.
+- [ ] **SKA** — Eventuella avtal eller överenskommelser om gemensam utveckling är diarieförda.
+- [ ] **SKA** — Dokumentation om arkivering eller nedstängning är diarieförd.
 
 ## C. Arkivering av projekt
 
-- [ ] Projektets status är uppdaterad (t.ex. arkiverat i Git-plattform, noterat i README).
-- [ ] Bedömning av vad som ska bevaras långsiktigt är gjord.
-- [ ] Ev. handlingar som ska bevaras utanför plattformen är exporterade enligt arkivfunktionens anvisningar.
-- [ ] Arkivfunktionen har konsulterats vid behov.
+- [ ] **SKA** — Projektets status är uppdaterad (t.ex. arkiverat i kodsamverkansplattformen, noterat i README).
+- [ ] **SKA** — Bedömning av vad som ska bevaras långsiktigt är gjord.
+- [ ] **SKA** — Eventuella handlingar som ska bevaras utanför plattformen är exporterade enligt arkivfunktionens anvisningar.
+- [ ] **SKA** — Arkivfunktionen har konsulterats vid behov.
 
-## D. Gallring
+## D. Gallring och GDPR
 
-- [ ] Gallring av handlingar följer gällande föreskrifter och gällande arkivredovisning.
-- [ ] Beslut om gallring är dokumenterat.
+- [ ] **SKA** — Gallring av handlingar följer gällande föreskrifter och gällande arkivredovisning.
+- [ ] **SKA** — Beslut om gallring är dokumenterat.
+- [ ] **SKA** — GDPR-bedömning är gjord om personuppgifter förekommit i ärenden, ändringsförfrågningar eller commit-meddelanden.
+
+---
+
+## Källor
+
+- **DIGG: Riktlinje för öppen programvara** (Dnr 2026-02797, beslutad 2026-04-07) — *Livscykelhantera öppen programvara*
+- Rutiner för hantering av allmänna handlingar (intern, refereras i DIGG-riktlinjen)
+- [Riksarkivet](https://riksarkivet.se/) — föreskrifter om bevarande och gallring
+- [Tryckfrihetsförordningen (1949:105)](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/tryckfrihetsforordning-1949105_sfs-1949-105/) — allmänna handlingar
+- [Offentlighets- och sekretesslagen (2009:400)](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400/)
+- [GDPR / Dataskyddsförordningen](https://www.imy.se/lagar--regler/dataskyddsforordningen/)
+
+För full ramverkslista, se [checklista-standarder.md](checklista-standarder.md).
 
 ---
 
 ## Se även – alla checklistor
 
 - [Checklista – anskaffning och val av öppen programvara](checklista-anskaffning.md)
+- [Checklista – använda öppen programvara](checklista-anvandning.md)
 - [Checklista – hantering av ärenden, frågor och externa bidrag](checklista-arenden-community.md)
 - [Checklista – bidrag till tredjeparts-OSS](checklista-bidrag-uppstrom.md)
 - [Checklista – diarieföring och arkivering](checklista-diarie-arkiv.md) ← du är här
